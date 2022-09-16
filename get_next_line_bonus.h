@@ -5,24 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kduru <kduru@student.42kocaeli.com.tr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/07 09:47:07 by kduru             #+#    #+#             */
-/*   Updated: 2022/09/07 09:47:10 by kduru            ###   ########.tr       */
+/*   Created: 2022/09/13 05:24:29 by kduru             #+#    #+#             */
+/*   Updated: 2022/09/13 05:24:31 by kduru            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _GET_NEXT_LINE_
-# define _GET_NEXT_LINE_
-# define BUFFER_SIZE 1000
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <unistd.h>
 # include <stdlib.h>
 
-size_t	ft_strlen(const char *str);
-char	*ft_strchr(char *s, int c);
-char	*ft_strjoin(char *left_str, char *buff);
-char	*get_line (char *str);
-char	*get_new_str(char *old_str);
-char	*read_line(int fd, char *str);
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1000
+# endif
+
+char	*ft_strchr(const char *str, int c);
 char	*get_next_line(int fd);
+char	*read_from_file(int fd, char *str);
+char	*ft_strjoin(char *left_str, char *buff);
+size_t	ft_strlen(const char *str);
+char	*get_line(char *str);
+char	*clear_str(char	*str);
+char	*ft_strdup(const char *str);
 
 #endif
